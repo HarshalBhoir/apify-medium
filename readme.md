@@ -1,39 +1,48 @@
 # Apify Medium
 
-A simple Flask wrapper that scrapes and convert a medium article to json data.
+A simple Flask wrapper that scrapes a Medium article and returns JSON.
+
+Requires Python 3.6+ 
 
 ### Installation
 
-Install all requirements
-
     pip install -r requirements.txt
+    
+    or
+    
+    pip3 install -r requirements.txt
     
 ### Usage
 
-Run Flask Server
+Run locally
 
     python app.py
     
-By default, it runs on port 5000
+Default port for Flask is 500
+
+Visit
+
+    http://127.0.0.1:5000/
+
+Response
+
+    {
+        message: "To use the API goto http://127.0.0.1:5000/medium?url=https://medium.com/@sagunshrestha/analyzing-cnets-headlines-3f350bb97cd4"
+    }
     
-### API calls
-
-In your browser, open the url
-
-     http://127.0.0.1:5000/medium?url=<link to a medium article>
-     
-Sample Request:
+Supply a Medium article's url
 
     http://127.0.0.1:5000/medium?url=https://medium.com/@sagunshrestha/analyzing-cnets-headlines-3f350bb97cd4
     
-Sample Response:
+Response:
 
 ```
 {
     author: "Sagun Shrestha",
-    author_url: "https://medium.com/@sagunshrestha",
-    claps: "52",
+    author_url: "https://towardsdatascience.com/@sagunshrestha",
+    description: "I wrote a crawler to scrape the news headlines from CNET’s sitemap and decided to perform some exploratory analysis on it. In this post, I will walk you through my findings, some anomalies and some…",
     id: "3f350bb97cd4",
+    image: "https://miro.medium.com/max/12000/0*cGuruaul8ki2Ou1n",
     keywords: [
         "Data Science",
         "Exploratory Data Analysis",
@@ -41,14 +50,13 @@ Sample Response:
         "Python",
         "Data Visualization"
     ],
-    modified_date: "2019-04-29T16:31:19.558Z",
+    modified_date: "2019-12-22T16:34:41.656Z",
     published_date: "2019-04-28T19:10:03.115Z",
-    publisher: "Medium",
-    publisher_url: "https://medium.com/",
+    publisher: "Towards Data Science",
+    publisher_url: "towardsdatascience.com",
     reading_time: "5 min read",
     subtitle: "Exploring the news published on CNET using Python and Pandas",
-    thumbnail: "https://cdn-images-1.medium.com/max/1454/1*xf9kQuTsPcSTHdwc_Ku1gA.png",
     title: "Analyzing CNET’s Headlines",
-    url: "https://medium.com/@sagunshrestha/analyzing-cnets-headlines-3f350bb97cd4"
+    url: "https://towardsdatascience.com/analyzing-cnets-headlines-3f350bb97cd4"
 }
 ```
